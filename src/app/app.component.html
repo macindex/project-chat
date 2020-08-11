@@ -1,0 +1,21 @@
+<h1>Base</h1>
+
+ <div *ngIf="auth.user$ | async as user; else login">
+  {{ user | json }}
+  <hr>
+  <button class="button" (click)="auth.signOut()">Sign out</button>
+</div>
+
+<!--<ng-template #login>
+  <button class="button" (click)="googleSignin">Login with google</button>
+</ng-template> -->
+
+<ng-template>
+  <!-- <button class="button" 
+          (click)="googleSignin()">{{loginText}}</button> -->
+  <button class="tab-button" 
+          (click)="signUp()">{{signUpText}}</button>
+</ng-template>
+
+<router-outlet></router-outlet>
+
